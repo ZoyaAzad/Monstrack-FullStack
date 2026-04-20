@@ -1,68 +1,96 @@
-# Monstrack Frontend
+# Monstrack
 
-Monstrack is a gamified task tracker where your habits evolve a personal monster.
+Turn procrastination into progression.
 
-## Tech Stack
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS v4
-- **Charts:** Chart.js with react-chartjs-2
-- **Animations:** Framer Motion
-- **Icons:** Lucide React
-- **HTTP Client:** Axios
+Monstrack is a gamified productivity system where every task you complete evolves your personal monster. Productivity isn’t tracked — it’s experienced like a game.
 
-## Getting Started
+---
 
-1.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+##  Why Monstrack Exists
 
-2.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
+Traditional task managers don’t motivate users — they just list work.
 
-3.  **Open the app:**
-    Navigate to [http://localhost:3000](http://localhost:3000).
+Monstrack flips that:
+- Every task = XP
+- Every streak = evolution
+- Every habit = visual growth of your monster
 
-## Demo Mode
-The app includes a fully functional demo mode using mock data.
-- Click "Try Demo" in the header or "Explore Demo" on the landing page.
-- This will log you in as a demo user with pre-populated tasks and monster state.
+Productivity becomes addictive by design.
 
-## Backend Integration
-The frontend is designed to be easily connected to a backend.
+---
 
-### API Client
-`lib/apiClient.js` is pre-configured with Axios.
-- Set `NEXT_PUBLIC_API` environment variable to your backend URL.
-- The client automatically attaches the `Authorization` header if a token is found in localStorage.
+##  Core System
 
-### Expected Endpoints
-Implement the following endpoints in your backend:
+- Complete tasks → earn XP
+- XP accumulates → level up
+- Leveling → triggers monster evolution stages
+- Progress is visual, not abstract
 
-- `POST /auth/login` - Body: `{ email, password }`. Returns: `{ token, user }`
-- `GET /user/me` - Returns current user data including monster state.
-- `GET /tasks` - Returns list of tasks.
-- `POST /tasks` - Body: `{ title, domain, xp, dueDate, verified }`.
-- `PATCH /tasks/:id` - Update task status or details.
-- `DELETE /tasks/:id` - Delete a task.
+---
 
-### Evolution Rules
-Logic for XP and evolution is located in `utils/evolutionRules.js` and `utils/xpMath.js`.
-- **XP per Level:** 100
-- **Stages:** Egg (Lvl 1), Hatchling (Lvl 2-4), Rookie (Lvl 5-9), Champion (Lvl 10-19), Ultimate (Lvl 20+)
+##  Tech Stack
 
-## Project Structure
-- `app/` - Next.js App Router pages and layout.
-- `components/` - Reusable UI components.
-- `hooks/` - Custom React hooks (Auth, DemoData).
-- `lib/` - Utilities and mock data.
-- `styles/` - Global styles and Tailwind config.
-- `utils/` - Helper functions for game logic.
+- Next.js (App Router)
+- Tailwind CSS v4
+- Framer Motion
+- Chart.js
+- Axios
+- Lucide Icons
 
-## TODO
-- [ ] Connect to real backend API.
-- [ ] Implement real authentication in `hooks/useAuth.js`.
-- [ ] Add unit tests for evolution logic.
-- [ ] Add more monster variations and animations.
+---
+
+##  Demo Mode
+
+A fully functional mock system is included.
+
+- Click **“Try Demo”**
+- Explore pre-built tasks
+- Watch monster evolution in real time
+
+No backend required to experience the system.
+
+---
+
+##  Backend Design
+
+Monstrack is built for scalable backend integration.
+
+### Core Endpoints
+
+- `POST /auth/login`
+- `GET /user/me`
+- `GET /tasks`
+- `POST /tasks`
+- `PATCH /tasks/:id`
+- `DELETE /tasks/:id`
+
+---
+
+##  Evolution System
+
+- 100 XP per level
+- Egg → Hatchling → Rookie → Champion → Ultimate
+
+Logic handled in:
+- `utils/xpMath.js`
+- `utils/evolutionRules.js`
+
+---
+
+##  Architecture
+
+- `app/` → UI routes
+- `components/` → UI system
+- `hooks/` → state + auth logic
+- `utils/` → game mechanics
+- `lib/` → API + mock layer
+
+---
+
+##  Roadmap
+
+- Real backend authentication
+- Multiplayer monster progression (vision feature 👀)
+- Leaderboards system
+- Achievement badges
+- Mobile optimization
